@@ -1,0 +1,9 @@
+# .pairs - configuration for 'git pair'
+pairs:
+  # <initials>: <Firstname> <Lastname>[; <email-id>]
+  bg: Ben Golder; bgolder
+  leo: Leo Mancini; leo
+email:
+  prefix: pair
+  domain: codeforamerica.org
+  no_solo_prefix: true
