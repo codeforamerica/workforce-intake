@@ -2,7 +2,7 @@ require "rails_helper"
 
 RSpec.feature "create a simple application for workforce services" do
   scenario "with a minimal situation" do
-    visit new_workforce_application_path
+    visit "/"
 
     fill_in "Email", with: "user@example.com"
     fill_in "Phone number", with: "1234567890"
