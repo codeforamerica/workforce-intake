@@ -2,6 +2,9 @@
 <html>
   <head>
     <title>WorkforceIntake</title>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +13,12 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div class="page-wrapper">
+      <section class="slab">
+        <div class="grid">
+          <%= yield %>
+        </div>
+      </section>
+    </div>
   </body>
 </html>

@@ -1,37 +1,22 @@
-<%= form_with(model: workforce_application, local: true) do |form| %>
-  <% if workforce_application.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(workforce_application.errors.count, "error") %> prohibited this workforce_application from being saved:</h2>
+<main id="main" class="form-card">
+  <%= form_with(model: workforce_application, local: true, builder: Cfa::Styleguide::CfaFormBuilder) do |form| %>
 
-      <ul>
-      <% workforce_application.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+    <header class="form-card__header">
+      <h1 class="form-card__title">
+        Tell us about yourself
+      </h1>
+    </header>
+
+    <div class="form-card__content">
+      <%= form.cfa_input_field(:email, "What is your email?", type: "email") %>
+      <%= form.cfa_input_field(:phone_number, "What is your phone number?", type: "tel",
+                               help_text: "We will send you text messages at this number.") %>
+      <%= form.cfa_input_field(:household_size, "How many people do you live with and share money with?", type: "number") %>
+      <%= form.cfa_input_field(:earned_income, "How much money do you make each month?", type: "number",
+                               help_text: "Your best estimate is okay.", prefix: "$") %>
+    </div>
+    <div class="form-card__footer">
+      <button type="submit" class="button button--primary">Continue <i class="icon icon-arrow_forward"></i></button>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= form.label :email %>
-    <%= form.text_field :email %>
-  </div>
-
-  <div class="field">
-    <%= form.label :phone_number %>
-    <%= form.text_field :phone_number %>
-  </div>
-
-  <div class="field">
-    <%= form.label :household_size %>
-    <%= form.number_field :household_size %>
-  </div>
-
-  <div class="field">
-    <%= form.label :earned_income %>
-    <%= form.number_field :earned_income %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+</main>
