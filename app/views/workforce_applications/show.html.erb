@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @workforce_application.email %>
+</p>
+
+<p>
+  <strong>Phone number:</strong>
+  <%= @workforce_application.phone_number %>
+</p>
+
+<p>
+  <strong>Household size:</strong>
+  <%= @workforce_application.household_size %>
+</p>
+
+<p>
+  <strong>Earned income:</strong>
+  <%= @workforce_application.earned_income %>
+</p>
+
+<%= link_to 'Edit', edit_workforce_application_path(@workforce_application) %> |
+<%= link_to 'Back', workforce_applications_path %>

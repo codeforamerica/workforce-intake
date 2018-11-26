@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Workforce Applications</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Email</th>
+      <th>Phone number</th>
+      <th>Household size</th>
+      <th>Earned income</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @workforce_applications.each do |workforce_application| %>
+      <tr>
+        <td><%= workforce_application.email %></td>
+        <td><%= workforce_application.phone_number %></td>
+        <td><%= workforce_application.household_size %></td>
+        <td><%= workforce_application.earned_income %></td>
+        <td><%= link_to 'Show', workforce_application %></td>
+        <td><%= link_to 'Edit', edit_workforce_application_path(workforce_application) %></td>
+        <td><%= link_to 'Destroy', workforce_application, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Workforce Application', new_workforce_application_path %>
